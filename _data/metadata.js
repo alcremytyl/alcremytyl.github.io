@@ -1,6 +1,6 @@
 export default {
 	title: "CS Blog",
-	url: "https://example.com/",
+	url: "https://alcremytyl.github.io/",
 	language: "en",
 	description: "Blog for class.",
 	author: {
