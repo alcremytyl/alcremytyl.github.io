@@ -5,9 +5,17 @@
   <subtitle>This is a longer description about your blog.</subtitle>
   <link href="https://alcremytyl.github.io/feed/feed.xml" rel="self" />
   <link href="https://alcremytyl.github.io/" />
-  <updated>2025-09-16T02:46:44Z</updated>
+  <updated>2025-09-15T00:00:00Z</updated>
   <id>https://alcremytyl.github.io/</id>
   <author>
     <name>Your Name</name>
   </author>
+  <entry>
+    <title>intro</title>
+    <link href="https://alcremytyl.github.io/blog/1-intro/" />
+    <updated>2025-09-15T00:00:00Z</updated>
+    <id>https://alcremytyl.github.io/blog/1-intro/</id>
+    <content type="html">&lt;p&gt;This will be where I post my blogs for CS-343 and CS-348.&lt;/p&gt;
+</content>
+  </entry>
 </feed>
