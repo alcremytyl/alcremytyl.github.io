@@ -5,11 +5,69 @@
   <subtitle>This is a longer description about your blog.</subtitle>
   <link href="https://alcremytyl.github.io/feed/feed.xml" rel="self" />
   <link href="https://alcremytyl.github.io/" />
-  <updated>2025-10-04T00:00:00Z</updated>
+  <updated>2025-10-05T00:00:00Z</updated>
   <id>https://alcremytyl.github.io/</id>
   <author>
     <name>Your Name</name>
   </author>
+  <entry>
+    <title>CS-343 Quarter 1</title>
+    <link href="https://alcremytyl.github.io/blog/cs-343_quarter_1/" />
+    <updated>2025-10-05T00:00:00Z</updated>
+    <id>https://alcremytyl.github.io/blog/cs-343_quarter_1/</id>
+    <content type="html">&lt;p&gt;We did three things this quarter.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PlantUML diagrams&lt;/li&gt;
+&lt;li&gt;Design pattern implementation&lt;/li&gt;
+&lt;li&gt;dipping our toes into REST APIs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;PlantUML is a tool that generates diagrams based on their domain-specific language.
+Here&#39;s an example structural diagram:&lt;/p&gt;
+&lt;pre class=&quot;language-plantuml&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;title&lt;/span&gt; Hello World - Structural Diagram
+
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; Hello &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    +sayHello&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; World &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    +receiveHello&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+Hello &lt;span class=&quot;token arrow operator&quot;&gt;--&gt;&lt;/span&gt; World &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; says &lt;span class=&quot;token string&quot;&gt;&quot;Hello&quot;&lt;/span&gt;
+&lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://alcremytyl.github.io/blog/cs-343_quarter_1/H1V9LgJIoZ-286.avif 286w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://alcremytyl.github.io/blog/cs-343_quarter_1/H1V9LgJIoZ-286.webp 286w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://alcremytyl.github.io/blog/cs-343_quarter_1/H1V9LgJIoZ-286.png&quot; alt=&quot;Hello World Diagram&quot; width=&quot;286&quot; height=&quot;255&quot;&gt;&lt;/picture&gt;
+&lt;p&gt;There are also ones known as &amp;quot;Sequence Diagrams&amp;quot; that outline a program&#39;s flow of operations while showing the scope of each variable. I don&#39;t know when it&#39;d come in handy but that may change once I do the capstone assignment.&lt;/p&gt;
+&lt;p&gt;They look something like this:&lt;/p&gt;
+&lt;pre class=&quot;language-plantuml&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;participant&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Program&quot;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; Program
+&lt;span class=&quot;token keyword&quot;&gt;participant&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;main()&quot;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; Main
+&lt;span class=&quot;token keyword&quot;&gt;participant&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;readInput()&quot;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; Read
+&lt;span class=&quot;token keyword&quot;&gt;participant&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;printOutput()&quot;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; Print
+
+Program &lt;span class=&quot;token arrow operator&quot;&gt;-&gt;&lt;/span&gt; Main&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; call main&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;activate&lt;/span&gt; Main
+
+Main &lt;span class=&quot;token arrow operator&quot;&gt;-&gt;&lt;/span&gt; Read&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; call readInput&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;activate&lt;/span&gt; Read
+Read &lt;span class=&quot;token arrow operator&quot;&gt;-&gt;&lt;/span&gt; Read&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; get user input
+&lt;span class=&quot;token keyword&quot;&gt;deactivate&lt;/span&gt; Read
+Main &lt;span class=&quot;token arrow operator&quot;&gt;&amp;lt;--&lt;/span&gt; Read&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; return input
+
+Main &lt;span class=&quot;token arrow operator&quot;&gt;-&gt;&lt;/span&gt; Print&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; call printOutput&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;input&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;activate&lt;/span&gt; Print
+Print &lt;span class=&quot;token arrow operator&quot;&gt;-&gt;&lt;/span&gt; Print&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; print to console
+&lt;span class=&quot;token keyword&quot;&gt;deactivate&lt;/span&gt; Print
+
+&lt;span class=&quot;token keyword&quot;&gt;deactivate&lt;/span&gt; Main
+Program &lt;span class=&quot;token arrow operator&quot;&gt;&amp;lt;--&lt;/span&gt; Main&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; end main&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://alcremytyl.github.io/blog/cs-343_quarter_1/MsnBogl7sR-510.avif 510w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://alcremytyl.github.io/blog/cs-343_quarter_1/MsnBogl7sR-510.webp 510w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://alcremytyl.github.io/blog/cs-343_quarter_1/MsnBogl7sR-510.png&quot; alt=&quot;Hello World Diagram&quot; width=&quot;510&quot; height=&quot;320&quot;&gt;&lt;/picture&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;We then applied what we learned to refactor a duck codebase into variants that follow the Strategy and Singleton patterns. The usage of a structural diagram helped visualize the attribtues and relations between classes immensely. I&#39;d see myself using at least the structural diagrams for collaborative projects as we&#39;d iron out a design for our codebase to follow.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>CS-348 Quarter 1</title>
     <link href="https://alcremytyl.github.io/blog/cs-348_quarter_1/" />
