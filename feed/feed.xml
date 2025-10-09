@@ -5,11 +5,22 @@
   <subtitle>This is a longer description about your blog.</subtitle>
   <link href="https://alcremytyl.github.io/feed/feed.xml" rel="self" />
   <link href="https://alcremytyl.github.io/" />
-  <updated>2025-09-15T00:00:00Z</updated>
+  <updated>2025-10-04T00:00:00Z</updated>
   <id>https://alcremytyl.github.io/</id>
   <author>
     <name>Your Name</name>
   </author>
+  <entry>
+    <title>CS-348 Quarter 1</title>
+    <link href="https://alcremytyl.github.io/blog/cs-348_quarter_1/" />
+    <updated>2025-10-04T00:00:00Z</updated>
+    <id>https://alcremytyl.github.io/blog/cs-348_quarter_1/</id>
+    <content type="html">&lt;p&gt;We used this quarter to get acquainted with the &lt;code&gt;git&lt;/code&gt; version control sofware. I&#39;ve used git for a few years but it was honestly the bare minimum.
+My usage of it was effectively a cycle of writing out large chunks across several files,&lt;code&gt;git commit -am &amp;quot;some vaguely related message&amp;quot;&lt;/code&gt;, and &lt;code&gt;git push&lt;/code&gt;. That is all. No branches no checkouts, &lt;em&gt;maybe&lt;/em&gt; a &lt;code&gt;git reset --hard&lt;/code&gt; if I royally screwed up a system config (my old bspwm setup). That was all I knew and all I felt comfortable doing.&lt;/p&gt;
+&lt;p&gt;That changed after trying out &lt;a href=&quot;https://github.com/pcottle&quot;&gt;pcottle&lt;/a&gt;&#39;s &lt;a href=&quot;https://learngitbranching.js.org/?locale=en_US&quot;&gt;Learn Git Branching&lt;/a&gt; for homework assignments. Its representation of git projects as flexible trees whose nodes may be moved around, cloned, and restructured as you please helped ease me into knowing not only what rebasing actually does (grafting nodes to other places) instead of the magic cure to make my push work. In fact, I tried applying knowledge from it in another class&#39;s assignment and it made differentiating between the base, intermediate, and advanced versions of the assignment easy. I thought git branches would&#39;ve had much more of a storage overhead but no, commits really are just lists with insertions and deletions rather than mass duplicating files.&lt;/p&gt;
+&lt;p&gt;I&#39;ve heard that a lot of CS college graduates don&#39;t know version control is a thing until they go get trained by employers which shocked me at first. However, I&#39;m glad to know that our cirriculum didn&#39;t skip out on it. I&#39;d say learning tools like &lt;code&gt;git&lt;/code&gt;, &lt;code&gt;mercurial&lt;/code&gt;, or even copy-pasting your folder is as essential as even writing the code itself. I wouldn&#39;t wish permanently losing your project to anyone.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>intro</title>
     <link href="https://alcremytyl.github.io/blog/1-intro/" />
