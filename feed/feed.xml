@@ -5,11 +5,28 @@
   <subtitle>This is a longer description about your blog.</subtitle>
   <link href="https://alcremytyl.github.io/feed/feed.xml" rel="self" />
   <link href="https://alcremytyl.github.io/" />
-  <updated>2025-10-05T00:00:00Z</updated>
+  <updated>2025-11-15T00:00:00Z</updated>
   <id>https://alcremytyl.github.io/</id>
   <author>
     <name>Your Name</name>
   </author>
+  <entry>
+    <title>CS-343 Quarter 3</title>
+    <link href="https://alcremytyl.github.io/blog/cs-343_quarter_3/" />
+    <updated>2025-11-15T00:00:00Z</updated>
+    <id>https://alcremytyl.github.io/blog/cs-343_quarter_3/</id>
+    <content type="html">&lt;p&gt;I read Make Computer Science Great Again&#39;s blog on &lt;a href=&quot;https://medium.com/@MakeComputerScienceGreatAgain/understanding-rest-api-a-comprehensive-guide-52fc10f6c9ed&quot;&gt;understanding REST APIs&lt;/a&gt;. As the title says, it&#39;s a comprehensive guide that dives deep into REST API principles, design, and their benefits. I chose this article as we&#39;re using a REST API for Thea&#39;s Pantry and I wanted to further familiarize myself with them in my free time.&lt;/p&gt;
+&lt;p&gt;After defining what REST is, the author listed off the key principles of REST API design.&lt;/p&gt;
+&lt;p&gt;The first is statelessness, the client must provide the server all the context it needs to do an operation. The server itself will hold no state. I saw this principle being upheld when we dug into the code for each operation of GIB (Guest Info Backend). For instance, &lt;code&gt;replaceGuest&lt;/code&gt; will fetch the current guest and swap in guest data given client parameters. It&#39;s all contained within tha endpoint&#39;s function call without making use of a greater app state. I wouldn&#39;t count RabbitMQ nor the config file as global state as the former is merely a logging tool and the latter just holds static port numbers and paths.&lt;/p&gt;
+&lt;p&gt;Next two are resources and HTTP methods. Resources refers to some resource (guest data, inventory #) and designating a URL path for it. HTTP methods are our GET, POST, PUT, etc. We separated our resouces into &lt;code&gt;/guests&lt;/code&gt; for guests, &lt;code&gt;/version&lt;/code&gt; for the version number, and &lt;code&gt;/inventory&lt;/code&gt; for the total lb of inventory in our system. &lt;code&gt;/guests&lt;/code&gt; supports several HTTP methods on top of this.&lt;/p&gt;
+&lt;p&gt;And then there&#39;s representation. In this case, we use &lt;code&gt;application/json&lt;/code&gt; but I found out you can also make use of YAML (&lt;code&gt;application/x-yaml&lt;/code&gt;) or protocol buffers (&lt;code&gt;application/protobuf&lt;/code&gt;) in the accept header in your project. I might experiment with this in my free time as I had no idea how protobufs were passed around prior to writing this.&lt;/p&gt;
+&lt;p&gt;Then it goes to design principles. It says stuff like &amp;quot;use appropriate names for your urls&amp;quot; and &amp;quot;use status codes that make sense&amp;quot;. One thing from this section that caught my eye however was the bit about versioning. Instead of doing &lt;code&gt;/foo&lt;/code&gt;, it&#39;d be &lt;code&gt;/vN/foo&lt;/code&gt; where &lt;code&gt;N&lt;/code&gt; is the version number. This sounds pretty useful for widely used applications that make use of semantic versioning but I don&#39;t see myself using it in the forseeable future.&lt;/p&gt;
+&lt;p&gt;And finally, the article describes the benefits. It noted simplicity, scalability, interoperability, and flexibility.
+REST&#39;s design being &lt;code&gt;HTTP_METHOD /resource {data it asked for...}&lt;/code&gt; is easy to get a grasp of. For context, I&#39;ve tried using websockets for a personal project and couldn&#39;t make heads or tails of it after a solid week of attempts. REST took at an openapi spec to get a basic understanding of it.
+The scalability would come from its statelessness, the system being made up of standalone methods would keep it efficient.
+The article defined interoperability as &amp;quot;used with various programming languages and platforms&amp;quot; which is true but this applies to a ton of language-agnostic APIs. Protobufs for instance have a spec layed out in a &lt;code&gt;.proto&lt;/code&gt; file and any language can implement the structure akin to a C struct header. Though this is a minor nitpick to an otherwise great guide for getting a firmer grasp on REST APIs.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>CS-343 Quarter 1</title>
     <link href="https://alcremytyl.github.io/blog/cs-343_quarter_1/" />
