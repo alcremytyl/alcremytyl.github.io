@@ -5,11 +5,38 @@
   <subtitle>This is a longer description about your blog.</subtitle>
   <link href="https://alcremytyl.github.io/feed/feed.xml" rel="self" />
   <link href="https://alcremytyl.github.io/" />
-  <updated>2025-11-15T00:00:00Z</updated>
+  <updated>2025-11-16T00:00:00Z</updated>
   <id>https://alcremytyl.github.io/</id>
   <author>
     <name>Your Name</name>
   </author>
+  <entry>
+    <title>CS-348 Quarter 1</title>
+    <link href="https://alcremytyl.github.io/blog/cs-348-quarter_3/" />
+    <updated>2025-11-16T00:00:00Z</updated>
+    <id>https://alcremytyl.github.io/blog/cs-348-quarter_3/</id>
+    <content type="html">&lt;p&gt;After doing the clean code assignments, I remembered a YouTube channel I used to watch, &lt;a href=&quot;https://www.youtube.com/@CodeAesthetic&quot;&gt;CodeAesthetic&lt;/a&gt;, that focused on code design and readability. I want to talk about three of his videos that adhere to clean code.&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=CFRhGnuXG-4&quot;&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://alcremytyl.github.io/blog/cs-348-quarter_3/6dX2CMbEC0-480.avif 480w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://alcremytyl.github.io/blog/cs-348-quarter_3/6dX2CMbEC0-480.webp 480w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://alcremytyl.github.io/blog/cs-348-quarter_3/6dX2CMbEC0-480.jpeg&quot; alt=&quot;&amp;quot;I&#39;m a Never Nester&amp;quot; Video Link&quot; width=&quot;480&quot; height=&quot;360&quot;&gt;&lt;/picture&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;First, we have &lt;a href=&quot;https://www.youtu.be/CFRhGnuXG-4&quot;&gt;&amp;quot;I&#39;m a Never Nester&amp;quot;&lt;/a&gt;. The video talks about how to use extraction and inversion to simplify code.&lt;/p&gt;
+&lt;p&gt;Extraction is taking a chunk out of code and moving it to its own function. That techinque was used everywhere throughout &lt;code&gt;Clean Code 1&lt;/code&gt;. Everything within &lt;code&gt;BadCode&lt;/code&gt;&#39;s &lt;code&gt;main&lt;/code&gt; function was split up into different methods for polling input and printing results. It also made the output a lot cleaner but I&#39;d say a good bulk of the imposing nature of that blob was from the sheer amount of things being expressed in &lt;code&gt;main&lt;/code&gt;. Too much was going so making a mental model of the program&#39;s flow took significantly longer than &lt;code&gt;GoodCode&lt;/code&gt;&#39;s &lt;code&gt;main&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Inversion is simply checking for failure up front. It incentivizes returning early which drastically cuts down on the mental overhead of a program. I believe it was only used once in the Clean Code assignments, assignment 1&#39;s &lt;code&gt;GoodCode.isPrime()&lt;/code&gt; with the early false but it really helps in real life scenarios. The &lt;a href=&quot;https://youtu.be/CFRhGnuXG-4?t=160&quot;&gt;2:40&lt;/a&gt; mark on the video shows off how helpful inversion is. CodeAesthetic described that implementation as &amp;quot;creating a validation gatekeeping section of the code which sort of declares the requirements of the function&amp;quot; and yeah pretty much. Going through a whole block of operations then an &lt;code&gt;else return false&lt;/code&gt; or &lt;code&gt;throw SomeErrorHere&lt;/code&gt; sounds good when writing it down but you&#39;ll need to keep track of more branching paths than just putting end conditions early on then doing whatever the goal is.&lt;/p&gt;
+&lt;p&gt;If I were forced to pick one as more important to hammer down, I&#39;d say inversion. Extracting away functionality into their own methods is extremely useful for dividing up your program for debugging but a long yet conditionally flat function is still easier to read for me. Either way, those variable and method names did help out with knowing what&#39;s going on.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://alcremytyl.github.io/blog/cs-348-quarter_3/%5Bhttps:/www.youtube.com/watch&quot;&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://alcremytyl.github.io/blog/cs-348-quarter_3/ItEtN2eUYM-480.avif 480w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://alcremytyl.github.io/blog/cs-348-quarter_3/ItEtN2eUYM-480.webp 480w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://alcremytyl.github.io/blog/cs-348-quarter_3/ItEtN2eUYM-480.jpeg&quot; alt=&quot;&amp;quot;Naming Things in Code&amp;quot; Video Link&quot; width=&quot;480&quot; height=&quot;360&quot;&gt;&lt;/picture&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This is where we get to the second video, &lt;a href=&quot;https://youtu.be/-J3wNP6u5YU&quot;&gt;Naming Things in Code&lt;/a&gt;. It has five principles.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Don&#39;t&lt;/strong&gt; Abbreviate Names&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Don&#39;t&lt;/strong&gt; put types in variable names&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Add&lt;/strong&gt; units to variables unless the type tells you&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Don&#39;t&lt;/strong&gt; put types in your types&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Refactor&lt;/strong&gt; if you find yourself naming code &amp;quot;Utils&amp;quot;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I think &lt;em&gt;never&lt;/em&gt; abbreviating is a bit heavy handed if you&#39;re just indexing or are reading &lt;code&gt;l&lt;/code&gt; lines but that may just a bad habit. Names should indicate what they entail but if we&#39;re running around with variables as prolix as &lt;code&gt;amountToAddInGallons&lt;/code&gt;, I&#39;d start thinking the mathematicians were onto something.&lt;/p&gt;
+&lt;p&gt;Never in my 10ish years of programming have I seen real usage of Hungarian notation in a codebase not old enough to legally drive so I don&#39;t think types in variable names is relevant to the modern era. The third principle however is much more relevant but I have a suggestion. We should make wrappers of the base types for maximal readability and reusability. Instead of the previous &lt;code&gt;int amountToAddInGallons&lt;/code&gt;, we should&#39;ve simply made it &lt;code&gt;Volume amount&lt;/code&gt; to a method &lt;code&gt;add&lt;/code&gt;/&lt;code&gt;fill&lt;/code&gt;. &lt;code&gt;Volume&lt;/code&gt; would be a wrapper for an underlying SI unit that we then convert to gallons. It&#39;d make the program clearer and allow us to reuse that wrapper whenever we need volume.&lt;/p&gt;
+&lt;p&gt;The fourth principle would adhere to avoiding disinformation with the given truck example but I can see it being okay for inherited error types. It&#39;s how I&#39;ve seen Python projects do it.&lt;/p&gt;
+&lt;p&gt;As for the fifth and final principal, I&#39;ve done it. Finding where to put very generic functions is pretty tough so I can sympathize with people that do it all the time. Refactoring a project to have no &lt;code&gt;util&lt;/code&gt; pile does help with searchability but I won&#39;t crucify anyone for doing it in a codebase.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>CS-343 Quarter 3</title>
     <link href="https://alcremytyl.github.io/blog/cs-343_quarter_3/" />

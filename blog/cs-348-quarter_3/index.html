@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>CS-343 Quarter 3</title>
+		<title>CS-348 Quarter 1</title>
 		<meta name="description" content="Blog for class.">
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="CS Blog">
 		
@@ -498,27 +498,37 @@ pre[class*="language-diff-"] {
 				
 
 
-<h1 id="cs-343-quarter-3">CS-343 Quarter 3</h1>
+<h1 id="cs-348-quarter-1">CS-348 Quarter 1</h1>
 
 <ul class="post-metadata">
-	<li><time datetime="2025-11-15">15 November 2025</time></li>
+	<li><time datetime="2025-11-16">16 November 2025</time></li>
 	<li><a href="/tags/cs-worcester/" class="post-tag">CS@Worcester</a>, </li>
-	<li><a href="/tags/cs-343/" class="post-tag">CS-343</a>, </li>
+	<li><a href="/tags/cs-348/" class="post-tag">CS-348</a>, </li>
 	<li><a href="/tags/quarter-3/" class="post-tag">Quarter-3</a></li>
 </ul>
 
-<p>I read Make Computer Science Great Again's blog on <a href="https://medium.com/@MakeComputerScienceGreatAgain/understanding-rest-api-a-comprehensive-guide-52fc10f6c9ed">understanding REST APIs</a>. As the title says, it's a comprehensive guide that dives deep into REST API principles, design, and their benefits. I chose this article as we're using a REST API for Thea's Pantry and I wanted to further familiarize myself with them in my free time.</p>
-<p>After defining what REST is, the author listed off the key principles of REST API design.</p>
-<p>The first is statelessness, the client must provide the server all the context it needs to do an operation. The server itself will hold no state. I saw this principle being upheld when we dug into the code for each operation of GIB (Guest Info Backend). For instance, <code>replaceGuest</code> will fetch the current guest and swap in guest data given client parameters. It's all contained within tha endpoint's function call without making use of a greater app state. I wouldn't count RabbitMQ nor the config file as global state as the former is merely a logging tool and the latter just holds static port numbers and paths.</p>
-<p>Next two are resources and HTTP methods. Resources refers to some resource (guest data, inventory #) and designating a URL path for it. HTTP methods are our GET, POST, PUT, etc. We separated our resouces into <code>/guests</code> for guests, <code>/version</code> for the version number, and <code>/inventory</code> for the total lb of inventory in our system. <code>/guests</code> supports several HTTP methods on top of this.</p>
-<p>And then there's representation. In this case, we use <code>application/json</code> but I found out you can also make use of YAML (<code>application/x-yaml</code>) or protocol buffers (<code>application/protobuf</code>) in the accept header in your project. I might experiment with this in my free time as I had no idea how protobufs were passed around prior to writing this.</p>
-<p>Then it goes to design principles. It says stuff like &quot;use appropriate names for your urls&quot; and &quot;use status codes that make sense&quot;. One thing from this section that caught my eye however was the bit about versioning. Instead of doing <code>/foo</code>, it'd be <code>/vN/foo</code> where <code>N</code> is the version number. This sounds pretty useful for widely used applications that make use of semantic versioning but I don't see myself using it in the forseeable future.</p>
-<p>And finally, the article describes the benefits. It noted simplicity, scalability, interoperability, and flexibility.
-REST's design being <code>HTTP_METHOD /resource {data it asked for...}</code> is easy to get a grasp of. For context, I've tried using websockets for a personal project and couldn't make heads or tails of it after a solid week of attempts. REST took at an openapi spec to get a basic understanding of it.
-The scalability would come from its statelessness, the system being made up of standalone methods would keep it efficient.
-The article defined interoperability as &quot;used with various programming languages and platforms&quot; which is true but this applies to a ton of language-agnostic APIs. Protobufs for instance have a spec layed out in a <code>.proto</code> file and any language can implement the structure akin to a C struct header. Though this is a minor nitpick to an otherwise great guide for getting a firmer grasp on REST APIs.</p>
+<p>After doing the clean code assignments, I remembered a YouTube channel I used to watch, <a href="https://www.youtube.com/@CodeAesthetic">CodeAesthetic</a>, that focused on code design and readability. I want to talk about three of his videos that adhere to clean code.</p>
+<br>
+<p><a href="https://www.youtube.com/watch?v=CFRhGnuXG-4"><picture><source type="image/avif" srcset="/blog/cs-348-quarter_3/6dX2CMbEC0-480.avif 480w"><source type="image/webp" srcset="/blog/cs-348-quarter_3/6dX2CMbEC0-480.webp 480w"><img loading="lazy" decoding="async" src="/blog/cs-348-quarter_3/6dX2CMbEC0-480.jpeg" alt="&quot;I'm a Never Nester&quot; Video Link" width="480" height="360"></picture></a></p>
+<p>First, we have <a href="https://www.youtu.be/CFRhGnuXG-4">&quot;I'm a Never Nester&quot;</a>. The video talks about how to use extraction and inversion to simplify code.</p>
+<p>Extraction is taking a chunk out of code and moving it to its own function. That techinque was used everywhere throughout <code>Clean Code 1</code>. Everything within <code>BadCode</code>'s <code>main</code> function was split up into different methods for polling input and printing results. It also made the output a lot cleaner but I'd say a good bulk of the imposing nature of that blob was from the sheer amount of things being expressed in <code>main</code>. Too much was going so making a mental model of the program's flow took significantly longer than <code>GoodCode</code>'s <code>main</code>.</p>
+<p>Inversion is simply checking for failure up front. It incentivizes returning early which drastically cuts down on the mental overhead of a program. I believe it was only used once in the Clean Code assignments, assignment 1's <code>GoodCode.isPrime()</code> with the early false but it really helps in real life scenarios. The <a href="https://youtu.be/CFRhGnuXG-4?t=160">2:40</a> mark on the video shows off how helpful inversion is. CodeAesthetic described that implementation as &quot;creating a validation gatekeeping section of the code which sort of declares the requirements of the function&quot; and yeah pretty much. Going through a whole block of operations then an <code>else return false</code> or <code>throw SomeErrorHere</code> sounds good when writing it down but you'll need to keep track of more branching paths than just putting end conditions early on then doing whatever the goal is.</p>
+<p>If I were forced to pick one as more important to hammer down, I'd say inversion. Extracting away functionality into their own methods is extremely useful for dividing up your program for debugging but a long yet conditionally flat function is still easier to read for me. Either way, those variable and method names did help out with knowing what's going on.</p>
+<p><a href="%5Bhttps://www.youtube.com/watch?v=CFRhGnuXG-4%5D(https://youtu.be/-J3wNP6u5YU)"><picture><source type="image/avif" srcset="/blog/cs-348-quarter_3/ItEtN2eUYM-480.avif 480w"><source type="image/webp" srcset="/blog/cs-348-quarter_3/ItEtN2eUYM-480.webp 480w"><img loading="lazy" decoding="async" src="/blog/cs-348-quarter_3/ItEtN2eUYM-480.jpeg" alt="&quot;Naming Things in Code&quot; Video Link" width="480" height="360"></picture></a></p>
+<p>This is where we get to the second video, <a href="https://youtu.be/-J3wNP6u5YU">Naming Things in Code</a>. It has five principles.</p>
+<ol>
+<li><strong>Don't</strong> Abbreviate Names</li>
+<li><strong>Don't</strong> put types in variable names</li>
+<li><strong>Add</strong> units to variables unless the type tells you</li>
+<li><strong>Don't</strong> put types in your types</li>
+<li><strong>Refactor</strong> if you find yourself naming code &quot;Utils&quot;</li>
+</ol>
+<p>I think <em>never</em> abbreviating is a bit heavy handed if you're just indexing or are reading <code>l</code> lines but that may just a bad habit. Names should indicate what they entail but if we're running around with variables as prolix as <code>amountToAddInGallons</code>, I'd start thinking the mathematicians were onto something.</p>
+<p>Never in my 10ish years of programming have I seen real usage of Hungarian notation in a codebase not old enough to legally drive so I don't think types in variable names is relevant to the modern era. The third principle however is much more relevant but I have a suggestion. We should make wrappers of the base types for maximal readability and reusability. Instead of the previous <code>int amountToAddInGallons</code>, we should've simply made it <code>Volume amount</code> to a method <code>add</code>/<code>fill</code>. <code>Volume</code> would be a wrapper for an underlying SI unit that we then convert to gallons. It'd make the program clearer and allow us to reuse that wrapper whenever we need volume.</p>
+<p>The fourth principle would adhere to avoiding disinformation with the given truck example but I can see it being okay for inherited error types. It's how I've seen Python projects do it.</p>
+<p>As for the fifth and final principal, I've done it. Finding where to put very generic functions is pretty tough so I can sympathize with people that do it all the time. Refactoring a project to have no <code>util</code> pile does help with searchability but I won't crucify anyone for doing it in a codebase.</p>
 
-<ul class="links-nextprev"><li class="links-nextprev-prev">← Previous<br> <a href="/blog/cs-343_quarter_1/">CS-343 Quarter 1</a></li><li class="links-nextprev-next">Next →<br><a href="/blog/cs-348-quarter_3/">CS-348 Quarter 1</a></li>
+<ul class="links-nextprev"><li class="links-nextprev-prev">← Previous<br> <a href="/blog/cs-343_quarter_3/">CS-343 Quarter 3</a></li>
 </ul>
 
 			</heading-anchors>
@@ -530,7 +540,7 @@ The article defined interoperability as &quot;used with various programming lang
 			</p>
 		</footer>
 
-		<!-- This page `/blog/cs-343_quarter_3/` was built on 2025-11-17T03:11:26.114Z -->
+		<!-- This page `/blog/cs-348-quarter_3/` was built on 2025-11-17T03:11:26.114Z -->
 		<script type="module" src="/dist/xbxy_EL6cU.js"></script>
 	</body>
 </html>
