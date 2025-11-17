@@ -15,7 +15,7 @@
     <link href="https://alcremytyl.github.io/blog/cs-348-quarter_3/" />
     <updated>2025-11-16T00:00:00Z</updated>
     <id>https://alcremytyl.github.io/blog/cs-348-quarter_3/</id>
-    <content type="html">&lt;p&gt;After doing the clean code assignments, I remembered a YouTube channel I used to watch, &lt;a href=&quot;https://www.youtube.com/@CodeAesthetic&quot;&gt;CodeAesthetic&lt;/a&gt;, that focused on code design and readability. I want to talk about three of his videos that adhere to clean code.&lt;/p&gt;
+    <content type="html">&lt;p&gt;After doing the clean code assignments, I remembered a YouTube channel I used to watch, &lt;a href=&quot;https://www.youtube.com/@CodeAesthetic&quot;&gt;CodeAesthetic&lt;/a&gt;, that focused on code design and readability. I want to talk about two of his videos that adhere to clean code.&lt;/p&gt;
 &lt;br&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=CFRhGnuXG-4&quot;&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://alcremytyl.github.io/blog/cs-348-quarter_3/6dX2CMbEC0-480.avif 480w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://alcremytyl.github.io/blog/cs-348-quarter_3/6dX2CMbEC0-480.webp 480w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://alcremytyl.github.io/blog/cs-348-quarter_3/6dX2CMbEC0-480.jpeg&quot; alt=&quot;&amp;quot;I&#39;m a Never Nester&amp;quot; Video Link&quot; width=&quot;480&quot; height=&quot;360&quot;&gt;&lt;/picture&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;First, we have &lt;a href=&quot;https://www.youtu.be/CFRhGnuXG-4&quot;&gt;&amp;quot;I&#39;m a Never Nester&amp;quot;&lt;/a&gt;. The video talks about how to use extraction and inversion to simplify code.&lt;/p&gt;
