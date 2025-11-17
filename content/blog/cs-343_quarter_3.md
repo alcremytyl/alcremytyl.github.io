@@ -1,5 +1,5 @@
 ---
-title: CS-343 Quarter 3
+title: CS-343 Q3 | Reaction to Understanding Rest APIs
 description: 
 date: 2025-11-15
 tags: CS@Worcester,CS-343,Quarter-3
