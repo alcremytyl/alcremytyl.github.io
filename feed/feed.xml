@@ -54,9 +54,9 @@
   </entry>
   <entry>
     <title>CS-343 Q3 | Reaction to Understanding Rest APIs</title>
-    <link href="https://alcremytyl.github.io/blog/cs-343_quarter_3/" />
+    <link href="https://alcremytyl.github.io/blog/cs-343_quarter_3-1/" />
     <updated>2025-11-15T00:00:00Z</updated>
-    <id>https://alcremytyl.github.io/blog/cs-343_quarter_3/</id>
+    <id>https://alcremytyl.github.io/blog/cs-343_quarter_3-1/</id>
     <content type="html">&lt;p&gt;I read Make Computer Science Great Again&#39;s blog on &lt;a href=&quot;https://medium.com/@MakeComputerScienceGreatAgain/understanding-rest-api-a-comprehensive-guide-52fc10f6c9ed&quot;&gt;understanding REST APIs&lt;/a&gt;. As the title says, it&#39;s a comprehensive guide that dives deep into REST API principles, design, and their benefits. I chose this article as we&#39;re using a REST API for Thea&#39;s Pantry and I wanted to further familiarize myself with them in my free time.&lt;/p&gt;
 &lt;p&gt;After defining what REST is, the author listed off the key principles of REST API design.&lt;/p&gt;
 &lt;p&gt;The first is statelessness, the client must provide the server all the context it needs to do an operation. The server itself will hold no state. I saw this principle being upheld when we dug into the code for each operation of GIB (Guest Info Backend). For instance, &lt;code&gt;replaceGuest&lt;/code&gt; will fetch the current guest and swap in guest data given client parameters. It&#39;s all contained within tha endpoint&#39;s function call without making use of a greater app state. I wouldn&#39;t count RabbitMQ nor the config file as global state as the former is merely a logging tool and the latter just holds static port numbers and paths.&lt;/p&gt;
