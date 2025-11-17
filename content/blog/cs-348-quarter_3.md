@@ -1,5 +1,5 @@
 ---
-title: CS-348 Quarter 1
+title: CS-348 Q3 | Never Nesting & Clean Code
 description: 
 date: 2025-11-16
 tags: CS@Worcester,CS-348,Quarter-3
