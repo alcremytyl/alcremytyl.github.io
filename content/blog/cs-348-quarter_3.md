@@ -5,7 +5,7 @@ date: 2025-11-16
 tags: CS@Worcester,CS-348,Quarter-3
 ---
 
-After doing the clean code assignments, I remembered a YouTube channel I used to watch, [CodeAesthetic](https://www.youtube.com/@CodeAesthetic), that focused on code design and readability. I want to talk about three of his videos that adhere to clean code.
+After doing the clean code assignments, I remembered a YouTube channel I used to watch, [CodeAesthetic](https://www.youtube.com/@CodeAesthetic), that focused on code design and readability. I want to talk about two of his videos that adhere to clean code.
 
 <br>
 
