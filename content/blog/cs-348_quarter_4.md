@@ -2,7 +2,7 @@
 title: CS-348 Quarter 4 | Sprint and Dogma
 description: 
 date: 2025-12-25
-tags: CS@Worcester,CS-348,Quarter-1
+tags: CS@Worcester,CS-348,Quarter-4
 ---
 
 Bruno Noriller's [“Sprints”: The biggest mistake of Software Engineering](https://medium.com/@noriller/sprints-the-biggest-mistake-of-software-engineering-34115e7de008) shows the negative consequences of improper use of AGILE/SCRUM-style development. Sprints are defined by the article as "time box[es] for a certain amount of work to be done", which they are. Then Noriller states that software development is a marathon, not a sprint, which is indeed the case. Though this is shrouded in a veil of adding features corporate dumped on you real quick. It can be the case in some workplaces but that shouldn't be the case. The SCRUM team decides their end goal and if they took on too many tasks, they can always renegotiate the content required to end a sprint. 
