@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>CS-343 Q3 | Composition &amp; Dependency Injection</title>
+		<title>CS-348 Quarter 4 | Sprint and Dogma</title>
 		<meta name="description" content="Blog for class.">
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="CS Blog">
 		
@@ -498,25 +498,24 @@ pre[class*="language-diff-"] {
 				
 
 
-<h1 id="cs-343-q3-composition-and-dependency-injection">CS-343 Q3 | Composition &amp; Dependency Injection</h1>
+<h1 id="cs-348-quarter-4-sprint-and-dogma">CS-348 Quarter 4 | Sprint and Dogma</h1>
 
 <ul class="post-metadata">
-	<li><time datetime="2025-11-16">16 November 2025</time></li>
+	<li><time datetime="2025-12-25">25 December 2025</time></li>
 	<li><a href="/tags/cs-worcester/" class="post-tag">CS@Worcester</a>, </li>
-	<li><a href="/tags/cs-343/" class="post-tag">CS-343</a>, </li>
-	<li><a href="/tags/quarter-3/" class="post-tag">Quarter-3</a></li>
+	<li><a href="/tags/cs-348/" class="post-tag">CS-348</a>, </li>
+	<li><a href="/tags/quarter-1/" class="post-tag">Quarter-1</a></li>
 </ul>
 
-<p>I was writing my <a href="https://alcremytyl.github.io/blog/cs-348-quarter_3/">blog entry for CS-348</a> and I came across another pair of <a href="https://www.youtube.com/@CodeAesthetic">CodeAesthetic</a> videos that reminded me of what we practiced in class.</p>
-<p><a href="https://youtu.be/hxGOiiR9ZKg"><picture><source type="image/avif" srcset="/blog/cs-343_quarter_3-2/bBOiwElary-480.avif 480w"><source type="image/webp" srcset="/blog/cs-343_quarter_3-2/bBOiwElary-480.webp 480w"><img loading="lazy" decoding="async" src="/blog/cs-343_quarter_3-2/bBOiwElary-480.jpeg" alt="&quot;The Flaws of Inheritance&quot; Video Link" width="480" height="360"></picture></a>
-<a href="https://youtu.be/J1f5b4vcxCQ"><picture><source type="image/avif" srcset="/blog/cs-343_quarter_3-2/rfM2hAVouF-480.avif 480w"><source type="image/webp" srcset="/blog/cs-343_quarter_3-2/rfM2hAVouF-480.webp 480w"><img loading="lazy" decoding="async" src="/blog/cs-343_quarter_3-2/rfM2hAVouF-480.jpeg" alt="&quot;Dependency Injection, The Best Pattern&quot; Video Link" width="480" height="360"></picture></a></p>
-<p>The first video described an issue about image manipulation with saving and loading functionality that were too tightly coupled thank to poor use of inheritance. The second is about dependency injection being used to develop some chat app.</p>
-<p>We had something similar happen in our Duck Simulation assignment where we had ducks that inherited methods that they had no use for (decoy and rubber ducks quacking/flying when they shouldn't). We solved this by moving functionality into behaviors responsible for their own logic and allowing users to pick and choose whatever behavior made sense for their ducks. That's pretty much composition in a nutshell. We compose an object that holds other objects and have the members be responsible for their own functionality. As for dependency injection, merely passing in objects would be an example of it.</p>
-<p>The first video's composition example had CodeAesthetics abstracting away save and load logic to an interface and implemented it on his extension-specific types. It was done in such a way where you could intermingle types and draw on some image regardless of the extension the file it was loaded from has. I think Python's PIL does something similar given how it's used but I've never dug into the source code. Like the duck simulation, we only take what we want.</p>
-<p>The second video's dependency injection example had message attachments being sent to multiple storage locations and many parameters to compensate for it. The main requirement was to upload and download attachments so CodeAesthetics created an interface for storage classes of each content delivery network to use. Then he changed his API to find which class to use then use the interface's methods. This is much more preferable than doing a whole song and dance of &quot;if it's AWS do this if it's SFTP do that&quot; at every step. We didn't have to do that sort of gymnastics in our duck simulation but we did use objects to encapsulate functionality. He also extracted the &quot;determining which storage class to use&quot; bit into a factory class which we also did for our ducks.</p>
-<p>These examples are pretty similar. There's some functionality with branching paths that gets boiled down to &quot;classes that implement some interface that removes responsibilities from the main logic&quot;. That's by design as dependency injection and composition go hand in hand. They make Object-Oriented Programming a lot simpler to extend and maintain.</p>
+<p>Bruno Noriller's <a href="https://medium.com/@noriller/sprints-the-biggest-mistake-of-software-engineering-34115e7de008">“Sprints”: The biggest mistake of Software Engineering</a> shows the negative consequences of improper use of AGILE/SCRUM-style development. Sprints are defined by the article as &quot;time box[es] for a certain amount of work to be done&quot;, which they are. Then Noriller states that software development is a marathon, not a sprint, which is indeed the case. Though this is shrouded in a veil of adding features corporate dumped on you real quick. It can be the case in some workplaces but that shouldn't be the case. The SCRUM team decides their end goal and if they took on too many tasks, they can always renegotiate the content required to end a sprint.</p>
+<p>Agile development, including SCRUM, is a framework designed to make software development more adaptable, iterative, and value-focused. However, it is not an end-all, be-all solution. While Agile emphasizes flexibility, frequent delivery, and continuous feedback, its effectiveness depends entirely on how it is implemented. Treating every sprint as a hard deadline will inevitably cause burnout and result in worse quality increments towards the end product.</p>
+<p>Burnout is a real risk when teams feel pressured to finish too much work in a single sprint. One way to avoid that is to focus on a sustainable pace and give teams control over their workload. That means negotiating what gets done in a sprint, leaving time for proper testing and clean code, and not treating every iteration as a race to add more features. Sprint retrospective seemed to be neglected or nonexistent in the development strategy the author illustrated. If one sprint was crunched up, the retrospective should have that dealt with so such errors don't happen in the next cycle.</p>
+<p>Joe Elwell commented on Noriller’s article with a perspective that got me to write this. He calls out how Agile and SCRUM can be misused when treated like a checklist or a bunch of mandatory meetings. That kind of rigidity ends up being demeaning to developers and counterproductive. Too many stand-ups, strict story-point tracking, or unbendable sprint goals can break focus, mess with workflow, and actually hurt the collaboration Agile is supposed to encourage. His point is clear: Agile is a mindset, not dogma. Teams should adapt practices to what works for them instead of blindly following frameworks.</p>
+<p>The big takeaway from both Noriller and Elwell is that Agile works best when it respects people and technical limits. Sprints are planning tools, not hard deadlines. Agile should help teams deliver value in a sustainable way, not force them into an artificial pace. If organizations understand that, they can keep output high while keeping developers sane. Thoughtful workload management, adaptive planning, and retrospectives let teams get the benefits of iterative development without the burnout or sloppy code that comes from pushing too hard.</p>
+<p>Noriller is right to warn against treating sprints like a pressure cooker for cramming in features, but the problem isn’t Agile or SCRUM itself. Proper use of Agile gives structure, predictability, and adaptability, all while respecting that software development is long-term work. Flexibility, team autonomy, and a sustainable pace came free with the SCRUM.</p>
+<p>The article also dumped the eXtreme &quot;Go Horse&quot; (XGH) manifesto at the end and honestly I do that all the time for my personal projects. Don't wish it upon any teams though that sounds hellish.</p>
 
-<ul class="links-nextprev"><li class="links-nextprev-prev">← Previous<br> <a href="/blog/cs-343_quarter_3-1/">CS-343 Q3 | Reaction to Understanding Rest APIs</a></li><li class="links-nextprev-next">Next →<br><a href="/blog/cs-348-quarter_3/">CS-348 Q3 | Never Nesting &amp; Clean Code</a></li>
+<ul class="links-nextprev"><li class="links-nextprev-prev">← Previous<br> <a href="/blog/cs-348-quarter_3/">CS-348 Q3 | Never Nesting &amp; Clean Code</a></li>
 </ul>
 
 			</heading-anchors>
@@ -528,7 +527,7 @@ pre[class*="language-diff-"] {
 			</p>
 		</footer>
 
-		<!-- This page `/blog/cs-343_quarter_3-2/` was built on 2025-12-09T05:06:34.611Z -->
+		<!-- This page `/blog/cs-348_quarter_4/` was built on 2025-12-09T05:06:34.611Z -->
 		<script type="module" src="/dist/xbxy_EL6cU.js"></script>
 	</body>
 </html>
