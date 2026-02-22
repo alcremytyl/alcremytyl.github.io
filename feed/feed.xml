@@ -5,11 +5,52 @@
   <subtitle>This is a longer description about your blog.</subtitle>
   <link href="https://alcremytyl.github.io/feed/feed.xml" rel="self" />
   <link href="https://alcremytyl.github.io/" />
-  <updated>2026-01-28T00:00:00Z</updated>
+  <updated>2026-02-21T00:00:00Z</updated>
   <id>https://alcremytyl.github.io/</id>
   <author>
     <name>Your Name</name>
   </author>
+  <entry>
+    <title>CS-443 Quater 1 | Reaction to Golden Rule of Assertions</title>
+    <link href="https://alcremytyl.github.io/blog/cs-443-q1/" />
+    <updated>2026-02-21T00:00:00Z</updated>
+    <id>https://alcremytyl.github.io/blog/cs-443-q1/</id>
+    <content type="html">&lt;p&gt;What the title says. &lt;a href=&quot;https://www.epicweb.dev/the-golden-rule-of-assertions&quot;&gt;Go read it here it&#39;s pretty nice.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;After reading Artem Zakharchenko&#39;s article on assertions, two things became clear. First, it&#39;s more important to assert the intent of the code than the implementation. Second, it helped me understand why some developers write tests before writing any code.&lt;/p&gt;
+&lt;p&gt;Let’s break this down. Zakharchenko emphasizes that tests should focus on verifying the right output; how we reach that point is a different concern. This is especially important as projects grow and the implementation changes over time. I&#39;ve gone through a lot of restructuring across many points of most of my projects but the output of each part generally stayed the same so I can vouch for this &lt;s&gt;lest the output changes too then you&#39;re gonna need to rewrite the tests too.&lt;/s&gt;&lt;/p&gt;
+&lt;p&gt;For example, consider a calculator:&lt;/p&gt;
+&lt;pre class=&quot;language-js&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; result &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;evaluateExpression&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;3 + 5*2&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;assert&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;result &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;13&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The test only concerns itself with the result. It doesn’t matter how the expression is parsed or evaluated. It could be something implemented yourself or some library; the unit test has no prejudice, it will pass either way. As the article says:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“The implementation may change but the intention stays the same.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Why Write Tests First?&lt;/p&gt;
+&lt;p&gt;So, why do some developers prefer writing tests before the actual code? The main idea here is that if you already know what you want your program to do, writing tests first can provide a clear direction. You’re essentially defining the expected behavior upfront, and then you write the code to make those tests pass. It&#39;s like translating a plan on Figma to a checklist that manages itself as you grow out your program.&lt;/p&gt;
+&lt;p&gt;Let’s say you’re working on a checkout system, and you want to ensure the total price, including tax and discounts, is calculated correctly. You could write a test for this behavior before even starting to implement the Cart class:&lt;/p&gt;
+&lt;pre class=&quot;language-js&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token function&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;correctly calculates total with tax and discount&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; cart &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Cart&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  cart&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;addItem&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;item1&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  cart&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;addItem&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;item2&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  cart&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;applyDiscount&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; total &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; cart&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;calculateTotal&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;assert&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;total &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;54&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Total = (20 + 30) * 0.9 * 1.05 = 54&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It defines a Cart object that can take in items, apply a discount, and calculate a total. It would roughly translate to the following implementation:&lt;/p&gt;
+&lt;pre class=&quot;language-cpp&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Cart&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  list&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;Item&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; items&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;double&lt;/span&gt; discount
+  &lt;span class=&quot;token keyword&quot;&gt;double&lt;/span&gt; taxRate
+
+  &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;addItem&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;name&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; price&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;applyDiscount&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;discount&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;calculateTotal&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It may not seem like much but imagine a lot more tests being made to assert different parts of that the system should have. Like customer discounts, removal, coupons, etc. A lot of the structural aspects of building that out would&#39;ve been ironed out already if ample tests like this one were cranked out beforehand.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>CS-443 Intro</title>
     <link href="https://alcremytyl.github.io/blog/cs-443-0-intro/" />
